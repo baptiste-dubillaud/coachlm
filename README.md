@@ -5,16 +5,16 @@ A simple sport plannifier using LLM and RAG
 
 This repo includes a Docker ecosystem for a three-service app:
 
-- Backend: FastAPI (Python) exposing `/api` endpoints
-- Frontend: Static site served by Nginx (proxies `/api` to backend)
-- Database: PostgreSQL with `pgvector` extension enabled
+- **Backend**: FastAPI (Python) exposing `/api/v1` endpoints
+- **Frontend**: Vue.js 3 + Vite development server
+- **Database**: PostgreSQL 18 with `pgvector` extension enabled
 
 ### Stack Components
 
 - Compose file: [docker-compose.yml](docker-compose.yml)
 - Environment: [.env](.env)
 - Backend (FastAPI): [backend/](backend)
-- Frontend (Nginx + static): [frontend/](frontend)
+- Frontend (Vue.js + Vite): [frontend/](frontend)
 - Database init (pgvector): [db/init.sql](db/init.sql)
 
 ### Prerequisites
@@ -36,16 +36,20 @@ docker compose logs -f
 
 Once up:
 
-- Frontend: http://localhost:3000
-- Backend health (proxied via frontend): http://localhost:3000/api/health
-- Postgres: localhost:5432 (user/db/password from `.env`)
+- **Frontend**: http://localhost:3000
+- **Backend API docs**: http://localhost:8000/docs
+- **Backend health**: http://localhost:8000/api/v1/healthcheck
+- **Postgres**: localhost:5432 (user/db/password from `.env`)
 
 ### Backend API
 
-- `GET /api/health` – health + DB status
-- `POST /api/embed` – body: `{ "content": string, "embedding": [f1,f2,f3] }`
-- `GET /api/search?embedding=v1,v2,v3&limit=5` – nearest neighbors by vector distance
-- `POST /api/seed` – inserts a few demo rows
+Current endpoints:
+
+- `GET /api/v1/healthcheck` – Health check with database status
+- `GET /api/v1/` – API version 1 welcome message
+- `GET /` – Root endpoint with API info
+
+For full API documentation, visit http://localhost:8000/docs (Swagger UI) when the backend is running.
 
 ### Environment
 
@@ -80,8 +84,9 @@ docker compose exec db psql -U app -d appdb
 ### Notes
 
 - Compose defines a custom network `app-network` used by all services.
-- The Postgres service uses `pgvector/pgvector:pg16` and enables the `vector` extension via [db/init.sql](db/init.sql).
-- The frontend Nginx config proxies `/api/*` to `backend:8000` inside the compose network, so the browser talks to one origin at port 3000.
+- The Postgres service uses `pgvector/pgvector:pg18` and enables the `vector` extension via [db/init.sql](db/init.sql).
+- The frontend runs Vite's development server with hot module reloading (HMR).
+- Backend and frontend run on separate ports: backend on 8000, frontend on 3000.
 
 ### Troubleshooting
 
