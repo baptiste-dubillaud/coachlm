@@ -1,11 +1,13 @@
 from fastapi import APIRouter, status
+from src.api.routeurs.v1.healthcheck.healthcheck_router import (
+    router as healthcheck_router,
+)
 
-from src.routeurs.v1.healthcheck.healthcheck_router import router as healthcheck_router
-
-# Versioning router 
+# Versioning router
 router = APIRouter(prefix="/v1")
 
 router.include_router(healthcheck_router)
+
 
 # Welcome endpoint for API v1
 @router.get("/", status_code=status.HTTP_200_OK)

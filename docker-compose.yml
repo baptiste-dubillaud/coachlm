@@ -13,7 +13,7 @@ services:
             retries: 20
             start_period: 5s
         ports:
-            - "5432:5432"
+            - "${POSTGRES_PORT:-5432}:5432"
         volumes:
             - db-data:/var/lib/postgresql
         networks:
@@ -23,11 +23,17 @@ services:
         build: ./backend
         container_name: app-backend
         environment:
-            POSTGRES_HOST: ${POSTGRES_HOST:-db}
-            POSTGRES_PORT: ${POSTGRES_PORT:-5432}
+            POSTGRES_HOST: db
+            POSTGRES_PORT: 5432
             POSTGRES_USER: ${POSTGRES_USER:-app}
             POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-app_password}
             POSTGRES_DB: ${POSTGRES_DB:-appdb}
+        healthcheck:
+            test: ["CMD-SHELL", "curl -f http://localhost:8000/api/v1/healthcheck || exit 1"]
+            interval: 15s
+            timeout: 5s
+            retries: 5
+            start_period: 10s
         volumes:
             - ./backend/src:/app/src
         ports:
@@ -46,7 +52,8 @@ services:
             - ./frontend:/app
             - /app/node_modules
         depends_on:
-            - backend
+            backend:
+                condition: service_healthy
         ports:
             - "3000:3000"
         networks:
