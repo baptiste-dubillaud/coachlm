@@ -1,53 +1,35 @@
+<script setup>
+import AppHeader from "@/core/header/AppHeader.vue";
+</script>
+
 <template>
-    <div class="container">
-        <h1>{{ message }}</h1>
-        <p class="subtitle">Welcome to CoachLM - Your AI-powered coaching platform</p>
-        <div class="info">
-            <p>Built with Vue.js {{ vueVersion }}</p>
-        </div>
+    <div class="app-container">
+        <!-- Header of the application -->
+        <AppHeader />
+
+        <!-- Main content of the application -->
+        <main class="main-content">
+            <router-view />
+        </main>
+
+        <!-- Footer of the application -->
+        <!-- <Footer /> -->
     </div>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import { version } from "vue";
-
-const message = ref("Hello World!");
-const vueVersion = version;
-</script>
-
 <style scoped>
-.container {
+.app-container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    text-align: center;
-    padding: 2rem;
+    background-color: var(--vt-bg-primary);
+    color: var(--vt-text-primary);
+    font-family: var(--vt-font-family);
 }
 
-h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-.info {
-    padding: 1rem 2rem;
-    background: #f5f5f5;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    color: #555;
+.main-content {
+    flex: 1;
+    width: 100%;
+    padding-top: 1rem;
 }
 </style>

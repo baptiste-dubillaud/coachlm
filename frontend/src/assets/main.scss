@@ -1,0 +1,14 @@
+@use '@/assets/base.scss';
+
+#app {
+    background-color: var(--vt-c-bg);
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}

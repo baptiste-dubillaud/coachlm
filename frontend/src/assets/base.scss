@@ -1,0 +1,56 @@
+:root {
+    --vt-white: #ffffff;
+    --vt-white-soft: #f8f8f8;
+    --vt-white-mute: #f2f2f2;
+
+    --vt-black: #181818;
+    --vt-black-soft: #222222;
+    --vt-black-mute: #282828;
+
+    --vt-indigo: #2c3e50;
+
+    // Typography
+    --vt-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --vt-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
+
+    // Accent colors for PersonalHub
+    --vt-accent-primary: #e67635;
+    --vt-accent-primary-hover: #d1652c;
+
+    --vt-divider-light-1: rgba(60, 60, 60, 0.29);
+    --vt-divider-light-2: rgba(60, 60, 60, 0.12);
+    --vt-divider-dark-1: rgba(84, 84, 84, 0.65);
+    --vt-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+    --vt-text-light-1: var(--vt-indigo);
+    --vt-text-light-2: rgba(60, 60, 60, 0.66);
+    --vt-text-dark-1: var(--vt-white);
+    --vt-text-dark-2: rgba(235, 235, 235, 0.64);
+
+    // Light theme (default)
+    --vt-bg-primary: var(--vt-white-soft);
+    --vt-bg-secondary: var(--vt-white-mute);
+    --vt-border-primary: var(--vt-divider-light-1);
+    --vt-border-secondary: var(--vt-divider-light-2);
+    --vt-text-primary: var(--vt-text-light-1);
+    --vt-text-secondary: var(--vt-black-soft);
+    --vt-text-tertiary: var(--vt-black-mute);
+    --vt-divider: var(--vt-divider-light-1);
+
+    // Smooth transitions for theme changes
+    * {
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+}
+
+.dark-theme {
+    // Dark theme overrides
+    --vt-bg-primary: var(--vt-black-soft);
+    --vt-bg-secondary: var(--vt-black-mute);
+    --vt-border-primary: var(--vt-divider-dark-1);
+    --vt-border-secondary: var(--vt-divider-dark-2);
+    --vt-text-primary: var(--vt-text-dark-1);
+    --vt-text-secondary: var(--vt-white-soft);
+    --vt-text-tertiary: var(--vt-white-mute);
+    --vt-divider: var(--vt-divider-dark-1);
+}
