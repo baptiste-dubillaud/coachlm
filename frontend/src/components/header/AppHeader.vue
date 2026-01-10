@@ -1,5 +1,4 @@
 <script setup lang="ts">
-/* import PersonalHubLogo from '@/assets/icons/PersonalHub.vue'; */
 import ThemeSelectorButton from '@/components/themeSelector/ThemeSelectorButton.vue';
 
 </script>

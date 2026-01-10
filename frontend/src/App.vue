@@ -1,23 +1,17 @@
 <script setup>
-import AppHeader from "@/core/header/AppHeader.vue";
+import AppHeader from "@/components/header/AppHeader.vue";
 </script>
 
 <template>
-    <div class="app-container">
-        <!-- Header of the application -->
-        <AppHeader />
+    <AppHeader />
 
-        <!-- Main content of the application -->
-        <main class="main-content">
-            <router-view />
-        </main>
-
-        <!-- Footer of the application -->
-        <!-- <Footer /> -->
-    </div>
+    <!-- Main content of the application -->
+    <main class="main-content">
+        <router-view />
+    </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .app-container {
     min-height: 100vh;
     display: flex;
