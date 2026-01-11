@@ -6,7 +6,7 @@ import AppHeader from "@/components/header/AppHeader.vue";
     <AppHeader />
 
     <!-- Main content of the application -->
-    <main class="main-content">
+    <main class="app-container main-content">
         <router-view />
     </main>
 </template>

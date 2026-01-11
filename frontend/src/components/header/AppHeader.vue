@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ThemeSelectorButton from '@/components/themeSelector/ThemeSelectorButton.vue';
+import ThemeSelectorButton from '@/components/buttons/themeSelector/ThemeSelectorButton.vue';
 
 </script>
 
@@ -27,8 +27,8 @@ import ThemeSelectorButton from '@/components/themeSelector/ThemeSelectorButton.
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--vt-bg-secondary);
-    border-bottom: 1px solid var(--vt-border-primary);
+    background-color: var(--vt-accent-primary);
+    border-bottom: 1px solid var(--vt-accent-primary-dark);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
