@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 
 import Button from '@/components/buttons/basic/Button.vue';
+import ToggleButton from '@/components/buttons/toggle/ToggleButton.vue';
+
+const isEnabled = ref(true);
 
 </script>
 
@@ -17,6 +21,13 @@ import Button from '@/components/buttons/basic/Button.vue';
         <Button level="primary">Primary Button</Button>
         <Button level="secondary">Secondary Button</Button>
         <Button type="reset">Cancel Button</Button>
+    </div>
+
+    <h2>Switch toggle Button</h2>
+
+    <div>
+        <ToggleButton v-model="isEnabled" icon-on="fas fa-moon" icon-off="fas fa-sun"/>
+        <ToggleButton v-model="isEnabled"></ToggleButton>
     </div>
 </template>
 
