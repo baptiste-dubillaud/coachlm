@@ -8,26 +8,28 @@ const isEnabled = ref(true);
 
 </script>
 
-<template>
-    <h1>Components Demo</h1>
-
-    <br>
-    <p>Here is a list of all self-implemented components and their variants developed in this project</p>
-
-    <br>
-    <h2>Buttons</h2>
-
-    <div>
-        <Button level="primary">Primary Button</Button>
-        <Button level="secondary">Secondary Button</Button>
-        <Button type="reset">Cancel Button</Button>
-    </div>
-
-    <h2>Switch toggle Button</h2>
-
-    <div>
-        <ToggleButton v-model="isEnabled" icon-on="fas fa-moon" icon-off="fas fa-sun"/>
-        <ToggleButton v-model="isEnabled"></ToggleButton>
+<template >
+    <div class="components-page">
+        <h1>Components Demo</h1>
+    
+        <br>
+        <p>Here is a list of all self-implemented components and their variants developed in this project</p>
+    
+        <br>
+        <h2>Buttons</h2>
+    
+        <div>
+            <Button level="primary">Primary Button</Button>
+            <Button level="secondary">Secondary Button</Button>
+            <Button type="reset">Cancel Button</Button>
+        </div>
+    
+        <h2>Switch toggle Button</h2>
+    
+        <div>
+            <ToggleButton v-model="isEnabled" icon-on="fas fa-moon" icon-off="fas fa-sun"/>
+            <ToggleButton v-model="isEnabled"></ToggleButton>
+        </div>
     </div>
 </template>
 
@@ -35,6 +37,12 @@ const isEnabled = ref(true);
 div {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    margin: 10px 0;
+}
+
+.components-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 </style>
