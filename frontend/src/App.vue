@@ -13,17 +13,14 @@ import AppHeader from "@/components/header/AppHeader.vue";
 
 <style scoped lang="scss">
 .app-container {
-    min-height: 100vh;
     display: flex;
+    flex: 1;
+    width: 100%;
+    height: calc(100vh - var(--vt-header-height));
+    overflow-y: auto;
     flex-direction: column;
     background-color: var(--vt-bg-primary);
     color: var(--vt-text-primary);
     font-family: var(--vt-font-family);
-}
-
-.main-content {
-    flex: 1;
-    width: 100%;
-    padding-top: 1rem;
 }
 </style>

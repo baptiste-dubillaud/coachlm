@@ -1,6 +1,6 @@
 :root {
     --vt-white: #ffffff;
-    --vt-white-soft: #f8f8f8;
+    --vt-white-soft: #f3e9e0;
     --vt-white-mute: #f2f2f2;
 
     --vt-black: #181818;
@@ -14,9 +14,9 @@
     --vt-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, 'Courier New', monospace;
 
     // Accent colors for the app
-    --vt-accent-primary: #e67635;
-    --vt-accent-primary-dark: #b35426;
-    --vt-accent-primary-hover: #d1652c;
+    --vt-accent-primary: #f3722c;
+    --vt-accent-primary-dark:#a54d21;
+    --vt-accent-primary-hover: #f05a1a;
 
     --vt-red: #cf4333;
     --vt-red-hover: #cf3e2e;
@@ -42,6 +42,17 @@
     --vt-text-tertiary: var(--vt-black-mute);
     --vt-divider: var(--vt-divider-light-1);
 
+    // Scrollbar styling
+    --vt-scrollbar-bg: var(--vt-white-mute);
+    --vt-scrollbar-thumb: var(--vt-black-mute);
+    --vt-scrollbar-thumb-hover: var(--vt-black-soft);
+    --vt-scrollbar-width: 8px;
+    --vt-scrollbar-border-radius: 4px;
+    --vt-scrollbar-thumb-border: 2px solid var(--vt-scrollbar-bg);
+
+    // header height
+    --vt-header-height: 70px;
+
     // Smooth transitions for theme changes
     * {
         transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -58,4 +69,34 @@
     --vt-text-secondary: var(--vt-white-soft);
     --vt-text-tertiary: var(--vt-white-mute);
     --vt-divider: var(--vt-divider-dark-1);
+
+    // Scrollbar dark theme overrides
+    --vt-scrollbar-bg: var(--vt-black-mute);
+    --vt-scrollbar-thumb: var(--vt-white-mute);
+    --vt-scrollbar-thumb-hover: var(--vt-white-soft);
+}
+
+// Custom scrollbar styling for webkit browsers (Chrome, Safari, Edge)
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--vt-scrollbar-thumb) var(--vt-scrollbar-bg);
+}
+
+*::-webkit-scrollbar {
+    width: var(--vt-scrollbar-width);
+    height: var(--vt-scrollbar-width);
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--vt-scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--vt-scrollbar-thumb);
+    border-radius: var(--vt-scrollbar-border-radius);
+    border: var(--vt-scrollbar-thumb-border);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vt-scrollbar-thumb-hover);
 }

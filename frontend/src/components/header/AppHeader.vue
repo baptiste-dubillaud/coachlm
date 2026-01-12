@@ -30,6 +30,7 @@ import ThemeSelectorButton from '@/components/buttons/themeSelector/ThemeSelecto
     background-color: var(--vt-accent-primary);
     border-bottom: 1px solid var(--vt-accent-primary-dark);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: var(--vt-header-height);
 }
 
 .header-left {
