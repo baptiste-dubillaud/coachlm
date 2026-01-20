@@ -1,7 +1,7 @@
 :root {
     --vt-white: #ffffff;
-    --vt-white-soft: #f3e9e0;
-    --vt-white-mute: #f2f2f2;
+    --vt-white-soft: #f8f9fa;
+    --vt-white-mute: #e9ecef;
 
     --vt-black: #181818;
     --vt-black-soft: #222222;
@@ -22,24 +22,28 @@
     --vt-red-hover: #cf3e2e;
     --vt-red-border: #992d22;
 
-    --vt-divider-light-1: rgba(60, 60, 60, 0.29);
-    --vt-divider-light-2: rgba(60, 60, 60, 0.12);
+    --vt-divider-light-1: rgba(0, 0, 0, 0.1);
+    --vt-divider-light-2: rgba(0, 0, 0, 0.06);
     --vt-divider-dark-1: rgba(84, 84, 84, 0.65);
     --vt-divider-dark-2: rgba(84, 84, 84, 0.48);
 
-    --vt-text-light-1: var(--vt-indigo);
-    --vt-text-light-2: rgba(60, 60, 60, 0.66);
+    --vt-text-light-1: #1a202c;
+    --vt-text-light-2: #4a5568;
     --vt-text-dark-1: var(--vt-white);
     --vt-text-dark-2: rgba(235, 235, 235, 0.64);
 
     // Light theme (default)
-    --vt-bg-primary: var(--vt-white-soft);
-    --vt-bg-secondary: var(--vt-white-mute);
+    --vt-bg-primary: #ffffff;
+    --vt-bg-secondary: var(--vt-white-soft);
+    --vt-bg-secondary-hover: #dee2e6;
+    --vt-bg-disabled: #ced4da;
     --vt-border-primary: var(--vt-divider-light-1);
     --vt-border-secondary: var(--vt-divider-light-2);
+    --vt-border-disabled: #adb5bd;
     --vt-text-primary: var(--vt-text-light-1);
-    --vt-text-secondary: var(--vt-black-soft);
-    --vt-text-tertiary: var(--vt-black-mute);
+    --vt-text-secondary: var(--vt-text-light-2);
+    --vt-text-tertiary: #718096;
+    --vt-text-disabled: #a0aec0;
     --vt-divider: var(--vt-divider-light-1);
 
     // Scrollbar styling
