@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 import Button from '@/components/buttons/basic/Button.vue';
 import ToggleButton from '@/components/buttons/toggle/ToggleButton.vue';
+import DropDown from '@/components/buttons/dropdown/DropDown.vue';
 
 const isEnabled = ref(true);
 
@@ -30,6 +31,28 @@ const isEnabled = ref(true);
             <ToggleButton v-model="isEnabled" icon-on="fas fa-moon" icon-off="fas fa-sun"/>
             <ToggleButton v-model="isEnabled"></ToggleButton>
         </div>
+
+        <h2>Dropdown Button</h2>
+        <div>
+            <DropDown 
+                :items="[
+                    { label: 'Option 1', value: 1 },
+                    { label: 'Option 2', value: 2, disabled: true },
+                    { label: 'Option 3', value: 3 }
+                ]" 
+                label="Select an option" 
+                placeholder="Choose..."/>
+
+            <DropDown 
+                :items="[
+                    { label: 'Option 1', value: 1 },
+                    { label: 'Option 2', value: 2, disabled: true },
+                    { label: 'Option 3', value: 3 }
+                ]" 
+                label="Select an option" 
+                level="secondary" 
+                placeholder="Choose..."/>
+        </div>  
     </div>
 </template>
 
